@@ -157,16 +157,6 @@ export const TOOLS_LIST = [
     },
     {
         id: 15,
-        name: 'Lab Planner',
-        icon: 'lab_planner.webp',
-        description: 'Plan your lab time in advance to counter goldfish memory issues!',
-        url: 'https://tower-lab-planner.vercel.app/',
-        author: 'Hazy',
-        active: true,
-        type: 'app',
-    },
-    {
-        id: 16,
         name: 'Enemy Level Skip Simulator',
         icon: 'els_simulator.webp',
         description: 'Simulate Enemy Level Skips for a run to get an accurate idea of how many skips to expect.  Accounts for freeups, cash purchased levels, and more.',
