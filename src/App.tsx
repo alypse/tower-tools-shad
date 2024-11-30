@@ -42,13 +42,14 @@ const ToolCard: React.FC<ToolCardProps> =  ({
 
                     <div>
                         <CardTitle>{tool.name}</CardTitle>
-                        <CardDescription>{tool.author}</CardDescription>
+                        <CardDescription>
+                            {tool.type === 'app' ? tool.type.toUpperCase() : tool.type.toUpperCase()}
+                            {' Created by: ' + tool.author}
+                        </CardDescription>
                     </div>
 
                     <div className='flex ml-auto'>
-                        {tool.type === 'app' ?
-                            <Badge variant='outline'>{tool.type.toUpperCase()}</Badge>
-                            : <Badge variant='outline'>{tool.type.toUpperCase()}</Badge>}
+
                         <Button variant='secondary' size='default' className='text-xl' onClick={() => onToggleFavorite(tool.id)}>
                             {isFavorite ? '★' : '☆'}
                         </Button>
