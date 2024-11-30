@@ -46,8 +46,8 @@ const ToolCard: React.FC<ToolCardProps> =  ({
                     </div>
                 </div>
                 {tool.type === 'app' ?
-                    <Badge variant='secondary'>{tool.type}</Badge>
-                    : <Badge variant='default'>{tool.type}</Badge>}
+                    <Badge variant='default'>{tool.type.toUpperCase()}</Badge>
+                    : <Badge variant='default'>{tool.type.toUpperCase()}</Badge>}
             </CardHeader>
             <CardContent>
                 <p>{tool.description}</p>
@@ -88,7 +88,7 @@ export const App: React.FC = () => {
 
                 {/*Favorites section*/}
                 <h3 className='text-3xl font-bold'>Your Favorites</h3>
-                <div className='grid-cols-2 gap-2 p-20'>
+                <div className='grid-cols-2 gap-1 p-10'>
                     {favoriteItems.length === 0 ? (
                         <p className='text-accent-foreground'>Favorite items to bring them to the top!</p>
                     ) : (
@@ -103,7 +103,7 @@ export const App: React.FC = () => {
 
                 {/*All items section*/}
                 <h3 className='text-3xl font-bold'>Tools</h3>
-                <div className='grid-cols-1 gap-2 p-20'>
+                <div className='grid grid-cols-1 gap-1 p-10'>
                     <div>
                         {nonFavoriteItems.map(app => (
                             <ToolCard key={app.id} tool={app} onToggleFavorite={toggleFavorite}
