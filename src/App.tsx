@@ -2,7 +2,7 @@ import { ThemeProvider } from "@/components/theme-provider.tsx";
 import { ModeToggle } from "@/components/mode-toggle.tsx";
 import { TOOLS_LIST } from "../data/listing.ts";
 import React, { useState } from "react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card.tsx";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card.tsx";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar.tsx";
 import { Button } from "@/components/ui/button.tsx";
 import { Badge } from "@/components/ui/badge.tsx";
@@ -32,34 +32,33 @@ const ToolCard: React.FC<ToolCardProps> =  ({
     }) => {
     return (
         <Card className='flex flex-col max-w-screen-sm'>
-            <CardHeader className='flex-row gap-4'>
-                <div className='flex gap-4'>
+            <CardHeader className='flex-row items-center gap-4'>
                     <Avatar>
                         <AvatarImage src={`/icons/${tool.icon}`}/>
                         <AvatarFallback>
                             {tool.name.slice(0, 2).toUpperCase()}
                         </AvatarFallback>
                     </Avatar>
+
                     <div>
                         <CardTitle>{tool.name}</CardTitle>
                         <CardDescription>{tool.author}</CardDescription>
                     </div>
-                    <div className='flex'>
-                        <Button size='default'><a href={tool.url} target='_blank'>GO</a></Button>
-                        <Button variant='secondary' size='default' onClick={() => onToggleFavorite(tool.id)}>
+
+                    <div className='flex ml-auto'>
+                        {tool.type === 'app' ?
+                            <Badge variant='outline'>{tool.type.toUpperCase()}</Badge>
+                            : <Badge variant='outline'>{tool.type.toUpperCase()}</Badge>}
+                        <Button variant='secondary' size='default' className='text-xl' onClick={() => onToggleFavorite(tool.id)}>
                             {isFavorite ? '★' : '☆'}
                         </Button>
+                        <Button size='default'><a href={tool.url} target='_blank'>GO</a></Button>
                     </div>
-                </div>
-                {/*{tool.type === 'app' ?*/}
-                {/*    <Badge variant='outline'>{tool.type.toUpperCase()}</Badge>*/}
-                {/*    : <Badge variant='outline'>{tool.type.toUpperCase()}</Badge>}*/}
             </CardHeader>
+
             <CardContent>
                 <p>{tool.description}</p>
             </CardContent>
-            <CardFooter className='flex justify-between'>
-            </CardFooter>
         </Card>
     )
 }
