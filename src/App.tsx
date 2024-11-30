@@ -1,10 +1,10 @@
 import { ThemeProvider } from "@/components/theme-provider.tsx";
 import { ModeToggle } from "@/components/mode-toggle.tsx";
-import { APPLIST } from "../data/listing.ts";
-import { GUIDELIST } from "../data/listing.ts";
+import { TOOLS_LIST } from "../data/listing.ts";
+
 import { ToolCard } from "@/components/tool-card.tsx";
 
-interface APP {
+interface TOOL {
     id: number
     name: string
     icon: string
@@ -12,20 +12,11 @@ interface APP {
     url: string
     author: string
     active: boolean
+    isFavorite?: boolean
 }
 
-interface GUIDE {
-    id: number
-    name: string
-    icon: string
-    description: string
-    url: string
-    author: string
-    active: boolean
-}
 
-const APPS: APP[] = APPLIST
-const GUIDES: GUIDE[] = GUIDELIST
+const TOOLS: TOOL[] = TOOLS_LIST.filter(tool => tool.active)
 
 export default function App() {
     // const [apps, setApps] = useState<APP[]>([])
@@ -34,11 +25,8 @@ export default function App() {
     return (
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme"> <ModeToggle></ModeToggle>
             <div className='grid grid-cols-4 gap-2 p-20'>
-                {APPS.map(app => (
+                {TOOLS.map(app => (
                     <ToolCard key={app.id} tool={app}></ToolCard>
-                ))}
-                {GUIDES.map(guide => (
-                    <ToolCard key={guide.id} tool={guide}></ToolCard>
                 ))}
             </div>
         </ThemeProvider>

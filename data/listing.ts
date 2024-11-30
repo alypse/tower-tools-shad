@@ -1,4 +1,4 @@
-export const APPLIST = [
+export const TOOLS_LIST = [
     {
         id: 0,
         name: "Skye's Tool Thread",
@@ -7,6 +7,7 @@ export const APPLIST = [
         url: 'https://discord.com/channels/850137217828388904/1241233346894364813/1241233350782353408',
         author: 'Skye',
         active: true,
+        type: 'app',
     },
     {
         id: 1,
@@ -17,6 +18,7 @@ export const APPLIST = [
         url: 'https://what-uw-should-i-pick.netlify.app/',
         author: 'Skye',
         active: true,
+        type: 'app',
     },
     {
         id: 2,
@@ -27,6 +29,7 @@ export const APPLIST = [
         url: 'https://what-tier-should-i-farm.netlify.app/',
         author: 'Skye',
         active: true,
+        type: 'app',
     },
     {
         id: 3,
@@ -36,6 +39,7 @@ export const APPLIST = [
         url: 'https://tower-enemy-stats.netlify.app/',
         author: 'Skye',
         active: true,
+        type: 'app',
     },
     {
         id: 4,
@@ -46,6 +50,7 @@ export const APPLIST = [
         url: 'https://tower-lab-calculator.netlify.app/',
         author: 'Skye',
         active: true,
+        type: 'app',
     },
     {
         id: 5,
@@ -56,6 +61,7 @@ export const APPLIST = [
         url: 'https://tower-workshop-calculator.netlify.app/',
         author: 'Skye',
         active: true,
+        type: 'app',
     },
     {
         id: 6,
@@ -66,6 +72,7 @@ export const APPLIST = [
         url: 'https://tower-module-calculator.netlify.app/',
         author: 'Skye',
         active: true,
+        type: 'app',
     },
     {
         id: 7,
@@ -76,6 +83,7 @@ export const APPLIST = [
         url: 'https://tower-stone-calculator.netlify.app/',
         author: 'Skye',
         active: true,
+        type: 'app',
     },
     {
         id: 8,
@@ -85,6 +93,7 @@ export const APPLIST = [
         url: 'https://tower-bot-calculator.netlify.app/',
         author: 'Skye',
         active: true,
+        type: 'app',
     },
     {
         id: 9,
@@ -94,6 +103,7 @@ export const APPLIST = [
         url: 'https://tower-cell-calculator.netlify.app/',
         author: 'Skye',
         active: true,
+        type: 'app',
     },
     {
         id: 10,
@@ -103,6 +113,7 @@ export const APPLIST = [
         url: 'https://thetower.lol/',
         author: 'this_guy',
         active: true,
+        type: 'app',
     },
     {
         id: 11,
@@ -112,6 +123,7 @@ export const APPLIST = [
         url: 'https://mvn.thetower.tools/',
         author: 'Alypse',
         active: true,
+        type: 'app',
     },
     {
         id: 12,
@@ -121,6 +133,7 @@ export const APPLIST = [
         url: 'https://tower-card-tracker.vercel.app/',
         author: 'Hazy',
         active: true,
+        type: 'app',
     },
     {
         id: 13,
@@ -130,6 +143,7 @@ export const APPLIST = [
         url: 'https://tower-lab-speedup-calc.vercel.app/',
         author: 'Hazy',
         active: true,
+        type: 'app',
     },
     {
         id: 14,
@@ -139,6 +153,7 @@ export const APPLIST = [
         url: 'https://tower-module-tracker.vercel.app/',
         author: 'Hazy',
         active: true,
+        type: 'app',
     },
     {
         id: 15,
@@ -148,6 +163,7 @@ export const APPLIST = [
         url: 'https://tower-lab-planner.vercel.app/',
         author: 'Hazy',
         active: true,
+        type: 'app',
     },
     {
         id: 16,
@@ -157,12 +173,10 @@ export const APPLIST = [
         url: 'https://towerels.pythonanywhere.com/',
         author: 'Andy1292',
         active: true,
-    }
-];
-
-export const GUIDELIST = [
+        type: 'app',
+    }, //\\  GUIDE SECTION  \\//
     {
-        id: 0,
+        id: 100,
         name: 'Build Guide',
         icon: 'GT.png',
         description:
@@ -170,18 +184,20 @@ export const GUIDELIST = [
         url: 'https://docs.google.com/document/d/e/2PACX-1vQzQy3eHlxfisCXH7C2K3YoHRPctSkH_kiwh4T18RZQT5ftYt5tp6Wlg9qfSO3J07BPGpvZumZqKUrf/pub',
         author: 'Skye',
         active: true,
+        type: 'guide',
     },
     {
-        id: 1,
+        id: 101,
         name: 'Farm Guide',
         icon: 'GT.png',
         description: 'Dives a bit deeper into some more advanced farming strats and mechanics and answers some FAQ and misconceptions about various mechanics.',
         url: 'https://docs.google.com/document/d/e/2PACX-1vRHspCR9zZlKtYGiEnfuoRl3t_zf1ANLbyj04cXO2fOmJqevsAhCPTSGseY8tsCByp_a-OIyl91_jnK/pub',
         author: 'Skye',
         active: true,
+        type: 'guide',
     },
     {
-        id: 2,
+        id: 102,
         name: 'DW / Devo HP Guide',
         icon: 'GT.png',
         description:
@@ -189,14 +205,16 @@ export const GUIDELIST = [
         url: 'https://docs.google.com/document/d/e/2PACX-1vSk0skb2Dyu5PlSDF6FBvpn7SSWW1q9v3yThIInBpoGcywHrPLEjtwGDvGlZHgTAHNS9A6EKN3G5X6S/pub',
         author: 'Skye',
         active: true,
+        type: 'guide',
     },
     {
-        id: 3,
+        id: 103,
         name: 'McBlue’s Practical Guide to The Tower',
         icon: 'GT.png',
         description: 'A quick-start guide to The Tower',
         url: 'https://docs.google.com/document/d/19bh1fFV6u3BNSOuCkIo1o1UdO5QyFxCZZBasO1VKZI8/edit?usp=sharing',
         author: 'McBlue',
         active: true,
+        type: 'guide',
     },
 ];
