@@ -31,9 +31,9 @@ const ToolCard: React.FC<ToolCardProps> =  ({
     isFavorite,
     }) => {
     return (
-        <Card className='flex flex-col justify-between'>
-            <CardHeader className='flex-row gap-4 items-center justify-between'>
-                <div className='flex items-center gap-4'>
+        <Card className='flex flex-col max-w-screen-sm'>
+            <CardHeader className='flex-row gap-4'>
+                <div className='flex gap-4'>
                     <Avatar>
                         <AvatarImage src={`/icons/${tool.icon}`}/>
                         <AvatarFallback>
@@ -44,19 +44,21 @@ const ToolCard: React.FC<ToolCardProps> =  ({
                         <CardTitle>{tool.name}</CardTitle>
                         <CardDescription>{tool.author}</CardDescription>
                     </div>
+                    <div className='flex'>
+                        <Button size='default'><a href={tool.url} target='_blank'>GO</a></Button>
+                        <Button variant='secondary' size='default' onClick={() => onToggleFavorite(tool.id)}>
+                            {isFavorite ? '★' : '☆'}
+                        </Button>
+                    </div>
                 </div>
-                {tool.type === 'app' ?
-                    <Badge variant='default'>{tool.type.toUpperCase()}</Badge>
-                    : <Badge variant='default'>{tool.type.toUpperCase()}</Badge>}
+                {/*{tool.type === 'app' ?*/}
+                {/*    <Badge variant='outline'>{tool.type.toUpperCase()}</Badge>*/}
+                {/*    : <Badge variant='outline'>{tool.type.toUpperCase()}</Badge>}*/}
             </CardHeader>
             <CardContent>
                 <p>{tool.description}</p>
             </CardContent>
             <CardFooter className='flex justify-between'>
-                <Button size='lg'><a href={tool.url} target='_blank'>GO</a></Button>
-                <Button variant='secondary' size='icon' onClick={() => onToggleFavorite(tool.id)}>
-                    {isFavorite ? '★' : '☆'}
-                </Button>
             </CardFooter>
         </Card>
     )
@@ -82,34 +84,37 @@ export const App: React.FC = () => {
 
     return (
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+            <div className='flex justify-end p-10 py-2'><ModeToggle></ModeToggle></div>
 
-            <div className='grid grid-cols-1 gap-1 p-10'>
-                <div className='flex justify-self-end'><ModeToggle></ModeToggle></div>
+            <div className='flex flex-col gap-4 items-center'>
 
                 {/*Favorites section*/}
-                <h3 className='text-3xl font-bold'>Your Favorites</h3>
-                <div className='grid-cols-2 gap-1 p-10'>
+                <h3 className='text-3xl font-bold px-10'>Your Favorites</h3>
+                <div className='space-y-2 px-10'>
                     {favoriteItems.length === 0 ? (
-                        <p className='text-accent-foreground'>Favorite items to bring them to the top!</p>
+                        <p className='text-accent-foreground text-center'>Favorite items to bring them to the top!</p>
                     ) : (
-                        <div>
-                            {favoriteItems.map(app => (
-                                <ToolCard key={app.id} tool={app} onToggleFavorite={toggleFavorite}
-                                          isFavorite={true}></ToolCard>
-                            ))}
-                        </div>
+                        favoriteItems.map(app => (
+                            <ToolCard
+                                key={app.id}
+                                tool={app}
+                                onToggleFavorite={toggleFavorite}
+                                isFavorite={true}></ToolCard>
+                        ))
                     )}
                 </div>
 
                 {/*All items section*/}
-                <h3 className='text-3xl font-bold'>Tools</h3>
-                <div className='grid grid-cols-1 gap-1 p-10'>
-                    <div>
-                        {nonFavoriteItems.map(app => (
-                            <ToolCard key={app.id} tool={app} onToggleFavorite={toggleFavorite}
-                                      isFavorite={false}></ToolCard>
-                        ))}
-                    </div>
+                <h3 className='text-3xl font-bold px-10'>Tools</h3>
+                <div className='space-y-2 px-10'>
+                    {nonFavoriteItems.map(app => (
+                            <ToolCard
+                                key={app.id}
+                                tool={app}
+                                onToggleFavorite={toggleFavorite}
+                                isFavorite={false}></ToolCard>
+                        )
+                    )}
                 </div>
             </div>
         </ThemeProvider>
