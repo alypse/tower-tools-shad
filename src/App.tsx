@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@/components/theme-provider.tsx";
 import { ModeToggle } from "@/components/mode-toggle.tsx";
 import { TOOLS_LIST } from "../data/listing.ts";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card.tsx";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar.tsx";
 import { Button } from "@/components/ui/button.tsx";
@@ -32,33 +32,32 @@ const ToolCard: React.FC<ToolCardProps> =  ({
     return (
         <Card className='flex flex-col max-w-screen-sm'>
             <CardHeader className='flex-row items-center gap-4'>
-                    <Avatar>
-                        <AvatarImage src={`/icons/${tool.icon}`}/>
-                        <AvatarFallback>
-                            {tool.name.slice(0, 2).toUpperCase()}
-                        </AvatarFallback>
-                    </Avatar>
+                <Avatar><a href={tool.url} target='_blank'>
+                    <AvatarImage src={`/icons/${tool.icon}`}/>
+                    <AvatarFallback>
+                        {tool.name.slice(0, 2).toUpperCase()}
+                    </AvatarFallback></a>
+                </Avatar>
 
-                    <div>
-                        <CardTitle>{tool.name}</CardTitle>
+                <div>
+                <CardTitle><a href={tool.url} target='_blank'>{tool.name}</a></CardTitle>
                         <CardDescription>
-                            {tool.type === 'app' ? tool.type.toUpperCase() : tool.type.toUpperCase()}
+                            {tool.type.toUpperCase()}
                             {' Created by: ' + tool.author}
                         </CardDescription>
                     </div>
 
                     <div className='flex ml-auto'>
 
-                        <Button variant='secondary' size='default' className='text-xl' onClick={() => onToggleFavorite(tool.id)}>
+                        <Button variant='secondary' size='default' className='text-xl'
+                                onClick={() => onToggleFavorite(tool.id)}>
                             {isFavorite ? '★' : '☆'}
                         </Button>
                         <Button size='default'><a href={tool.url} target='_blank'>GO</a></Button>
                     </div>
             </CardHeader>
 
-            <CardContent>
-                <p>{tool.description}</p>
-            </CardContent>
+            {isFavorite ? <></> : <CardContent><p>{tool.description}</p></CardContent>}
         </Card>
     )
 }
@@ -66,7 +65,16 @@ const ToolCard: React.FC<ToolCardProps> =  ({
 const TOOLS: TOOL[] = TOOLS_LIST.filter(tool => tool.active)
 
 export const App: React.FC = () => {
-    const [items, setItems] = useState<TOOL[]>(TOOLS);
+    // Initialize state with data from localStorage if it exists
+    const [items, setItems] = useState<TOOL[]>(() => {
+        const savedItems = localStorage.getItem('favoriteTools');
+        return savedItems ? JSON.parse(savedItems) : TOOLS;
+    });
+
+    // Save to localStorage whenever items change
+    useEffect(() => {
+        localStorage.setItem('favoriteTools', JSON.stringify(items));
+    }, [items]);
 
     const toggleFavorite = (id: number) => {
         setItems(prevItems =>
