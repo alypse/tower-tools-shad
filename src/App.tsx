@@ -30,8 +30,8 @@ const ToolCard: React.FC<ToolCardProps> =  ({
     isFavorite,
     }) => {
     return (
-        <Card className='flex flex-col max-w-screen-sm'>
-            <CardHeader className='flex-row items-center gap-4'>
+        <Card className='flex flex-col max-w-screen-lg min-w-screen-md'>
+            <CardHeader className='flex-row items-center gap-2'>
                 <Avatar><a href={tool.url} target='_blank'>
                     <AvatarImage src={`/icons/${tool.icon}`}/>
                     <AvatarFallback>
@@ -58,6 +58,7 @@ const ToolCard: React.FC<ToolCardProps> =  ({
             </CardHeader>
 
             {isFavorite ? <></> : <CardContent><p>{tool.description}</p></CardContent>}
+            {/*<CardContent><p>{tool.description}</p></CardContent>*/}
         </Card>
     )
 }
@@ -96,7 +97,6 @@ export const App: React.FC = () => {
             <div className='flex flex-col gap-4 items-center'>
 
                 {/*Favorites section*/}
-                <h3 className='text-3xl font-bold px-10'>Your Favorites</h3>
                 <div className='space-y-2 px-10'>
                     {favoriteItems.length === 0 ? (
                         <p className='text-accent-foreground text-center'>Favorite items to bring them to the top!</p>
@@ -112,7 +112,6 @@ export const App: React.FC = () => {
                 </div>
 
                 {/*All items section*/}
-                <h3 className='text-3xl font-bold px-10'>Tools</h3>
                 <div className='space-y-2 px-10'>
                     {nonFavoriteItems.map(app => (
                             <ToolCard
