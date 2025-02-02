@@ -58,7 +58,6 @@ const ToolCard: React.FC<ToolCardProps> =  ({
             </CardHeader>
 
             {isFavorite ? <></> : <CardContent><p>{tool.description}</p></CardContent>}
-            {/*<CardContent><p>{tool.description}</p></CardContent>*/}
         </Card>
     )
 }

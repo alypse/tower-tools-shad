@@ -188,17 +188,6 @@ export const TOOLS_LIST = [
     },
     {
         id: 102,
-        name: 'DW / Devo HP Guide',
-        icon: 'GT.png',
-        description:
-            'This is for players getting DW earlier on to maximize their HP Bonus, showing how Devo works and various micro opportunities to maximize your gain. This does not apply to more advanced later *devo farming strategies, only the HP bonus for players that are struggling to max that out.',
-        url: 'https://docs.google.com/document/d/e/2PACX-1vSk0skb2Dyu5PlSDF6FBvpn7SSWW1q9v3yThIInBpoGcywHrPLEjtwGDvGlZHgTAHNS9A6EKN3G5X6S/pub',
-        author: 'Skye',
-        active: true,
-        type: 'guide',
-    },
-    {
-        id: 103,
         name: 'McBlue’s Practical Guide to The Tower',
         icon: 'GT.png',
         description: 'A quick-start guide to The Tower',
