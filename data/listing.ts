@@ -10,7 +10,7 @@ export const TOOLS_LIST = [
         type: 'app',
     },
     {
-        id: 1,
+        id: 16,
         name: 'What UW Should I Pick?',
         icon: 'uw.webp',
         description:
@@ -164,10 +164,20 @@ export const TOOLS_LIST = [
         author: 'Andy1292',
         active: true,
         type: 'app',
-    }, //\\  GUIDE SECTION  \\//
+    },
+    {
+        id: 1,
+        name: 'Tower Update Bingo',
+        icon: 'bingo.jpg',
+        description: 'Play update bingo! Default conditions provided, or customize your own!',
+        url: 'https://tower-update-bingo.netlify.app/',
+        author: 'Skye',
+        active: true,
+        type: 'app',
+    },//\\  GUIDE SECTION  \\//
     {
         id: 100,
-        name: 'Build Guide',
+        name: 'Build Guide - Out Of Date',
         icon: 'GT.png',
         description:
             'Outlines the general strategic progression throughout your tower life. Read this first as a new player, at least the first few sections, to learn important mechanics of the game.',
@@ -178,7 +188,7 @@ export const TOOLS_LIST = [
     },
     {
         id: 101,
-        name: 'Farm Guide',
+        name: 'Farm Guide - Out Of Date',
         icon: 'GT.png',
         description: 'Dives a bit deeper into some more advanced farming strats and mechanics and answers some FAQ and misconceptions about various mechanics.',
         url: 'https://docs.google.com/document/d/e/2PACX-1vRHspCR9zZlKtYGiEnfuoRl3t_zf1ANLbyj04cXO2fOmJqevsAhCPTSGseY8tsCByp_a-OIyl91_jnK/pub',
