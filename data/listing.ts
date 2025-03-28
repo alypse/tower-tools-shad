@@ -28,7 +28,7 @@ export const TOOLS_LIST = [
             'Use this to track your farm runs and figure out where you should be farming, as well as graph/analyze phases during the course of a run to optimize individual phases.',
         url: 'https://what-tier-should-i-farm.netlify.app/',
         author: 'Skye',
-        active: true,
+        active: false,
         type: 'app',
     },
     {
@@ -172,6 +172,16 @@ export const TOOLS_LIST = [
         description: 'Play update bingo! Default conditions provided, or customize your own!',
         url: 'https://tower-update-bingo.netlify.app/',
         author: 'Skye',
+        active: true,
+        type: 'app',
+    },
+    {
+        id: 17,
+        name: 'Stone Planner',
+        icon: 'stone_planner.webp',
+        description: 'Create a stone spending plan based on when you earn stones.  Accounts for Tournaments, IAPs, Xsolla, and weekly boxes.',
+        url: 'https://stone-planner.streamlit.app/',
+        author: 'Andy1292',
         active: true,
         type: 'app',
     },//\\  GUIDE SECTION  \\//
