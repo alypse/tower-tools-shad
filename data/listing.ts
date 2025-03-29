@@ -28,7 +28,7 @@ export const TOOLS_LIST = [
             'Use this to track your farm runs and figure out where you should be farming, as well as graph/analyze phases during the course of a run to optimize individual phases.',
         url: 'https://what-tier-should-i-farm.netlify.app/',
         author: 'Skye',
-        active: false,
+        active: true,
         type: 'app',
     },
     {
