@@ -184,6 +184,16 @@ export const TOOLS_LIST = [
         author: 'Andy1292',
         active: true,
         type: 'app',
+    },
+    {
+        id: 18,
+        name: 'Vault Calculator',
+        icon: 'keys.png',
+        description: 'Check out the benefits of your hard-earned keys. Plan, unlock, win.',
+        url: 'https://tower-vault-calculator.netlify.app/',
+        author: 'BassNuke',
+        active: true,
+        type: 'app',
     },//\\  GUIDE SECTION  \\//
     {
         id: 100,
